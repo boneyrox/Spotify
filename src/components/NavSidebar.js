@@ -1,9 +1,7 @@
 /* eslint-disable react/display-name, jsx-a11y/click-events-have-key-events */
 import { Navigation } from "react-minimal-side-navigation";
 import React, { useState } from "react";
-import { faBars, faCoffee } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { FaBars } from "react-icons/fa";
+import { FaHeadphones, FaBars, FaSearch, FaPlayCircle, FaAlignLeft } from "react-icons/fa";
 
 import "react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css";
 
@@ -57,22 +55,27 @@ export const NavSidebar = () => {
                         {
                             title: "Discover",
                             itemId: "/discover",
-                            icon: 'faCoffee',
+                            elemBefore: () => <FaHeadphones className="text-lg text-white-100" />
                             // Optional
                         },
                         {
                             title: "Search",
                             itemId: "/search",
+                            elemBefore: () => <FaSearch className="text-lg text-white-900" />
 
                         },
                         {
                             title: "Playlists",
                             itemId: "/playlists",
+                            elemBefore: () => <FaPlayCircle className="text-lg text-white-900" />
+
 
                         },
                         {
                             title: "Charts",
                             itemId: "/charts",
+                            elemBefore: () => <FaAlignLeft className="text-lg text-white-900" />
+
 
                         }
                     ]}
