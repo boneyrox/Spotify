@@ -1,0 +1,180 @@
+/* -- this is for webpage restae page desigm --
+* {
+  margin: 0 auto;
+  padding: 0;
+  outline: 0;
+  font-family: "DM Sans", sans-serif;
+  max-width: 480px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  font-family: "DM Sans", sans-serif;
+}
+
+ul li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: "DM Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #05386b;
+  transition: 0.4s;
+  font-family: "DM Sans", sans-serif;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #05386b;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-family: "DM Sans", sans-serif;
+}
+
+body {
+  position: relative;
+  font-family: "DM Sans", sans-serif;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  color: #323232;
+  font-family: "DM Sans", sans-serif;
+}
+
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0px 20px;
+} */
+
+/*------------------------
+main code start here 
+-------------------------*/
+.text-center {
+  text-align: center;
+}
+
+.btn_main {
+  border: none;
+  outline: none;
+  background-color: #2c40ce;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 14px 30px;
+  font-weight: 700;
+  font-size: 13px;
+  border-radius: 4px;
+  /* width: 8rem !important; */
+}
+
+.btn_main:focus {
+  color: #fff !important;
+}
+
+.btn_main svg {
+  fill: #fff;
+  margin-left: 5px;
+}
+
+.input_box {
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  width: 100%;
+}
+ * {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+ }
+
+ 
+
+ 
+ :root{
+   scrollbar-width: none;
+ }
+ *::-webkit-scrollbar-thumb {
+   -ms-overflow-style: none;
+   /* IE and Edge */
+   scrollbar-width: none;
+   /* Firefox */
+ }
+.input_box label {
+  display: block;
+  width: 100%;
+  font-size: 12px;
+  color: #1e1f29;
+  font-weight: 500;
+}
+
+.input_box input,
+.input_box select {
+  margin-top: 10px;
+  width: 100%;
+  border: 1px solid #acacac;
+  min-height: 40px;
+  padding: 4%;
+  box-sizing: border-box;
+  font-weight: 500;
+  color: #3c3c40;
+  font-size: 12px;
+  border-radius: 5px;
+  background-color: #fff !important;
+}
+@media only screen and (max-width:490px) {
+  .myClassname {
+    margin: 4vh 0;
+  }
+  .tns-controls {
+    display: none;
+  }
+}
+.tns-controls{
+  position: absolute;
+  top: 0;
+  right: 6vw;
+  display: inline;
+}
+
+.tns-controls button[data-controls="prev"]{
+  visibility: hidden;
+}
+.tns-controls button[data-controls="next"]{
+  visibility: hidden;
+}
+.tns-controls button[data-controls="prev"]:after{
+  content: "<";
+  visibility: visible;
+  font-weight: 900;
+  font-size: 3vh;
+  color: rgb(143, 143, 143);
+}
+.tns-controls button[data-controls="next"]:after{
+  content: ">";
+  visibility: visible;
+  font-weight: 900;
+  font-size: 3vh;
+  color: rgb(143, 143, 143);
+}
