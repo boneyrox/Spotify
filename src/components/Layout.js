@@ -23,7 +23,7 @@ export const DashboardLayout = ({ children }) => {
 
 
 
-                    <main className="flex flex-col justify-between items-baseline h-screen w-screen overflow-auto " >
+                    <main className="main-body flex flex-col  justify-between items-baseline h-screen lg:w-screen overflow-y-auto " >
 
 
                         {children}
