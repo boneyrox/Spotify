@@ -1,6 +1,9 @@
 /* eslint-disable react/display-name, jsx-a11y/click-events-have-key-events */
 import { Navigation } from "react-minimal-side-navigation";
 import React, { useState } from "react";
+import { faBars, faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FaBars } from "react-icons/fa";
 
 import "react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css";
 
@@ -12,7 +15,7 @@ export const NavSidebar = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     return (
-        <React.Fragment>
+        <>
             {/* Sidebar Overlay */}
             <div
                 onClick={() => setIsSidebarOpen(false)}
@@ -28,6 +31,7 @@ export const NavSidebar = () => {
                 type="button"
                 style={{ position: 'fixed', left: '1vh', top: '1vh' }}
             >
+                <FontAwesomeIcon icon={FaBars} />
             </button>
 
 
@@ -53,6 +57,7 @@ export const NavSidebar = () => {
                         {
                             title: "Discover",
                             itemId: "/discover",
+                            icon: 'faCoffee',
                             // Optional
                         },
                         {
@@ -75,6 +80,6 @@ export const NavSidebar = () => {
 
 
             </div>
-        </React.Fragment>
+        </>
     );
 };

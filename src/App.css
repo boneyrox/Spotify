@@ -121,28 +121,7 @@ main code start here
    scrollbar-width: none;
    /* Firefox */
  }
-.input_box label {
-  display: block;
-  width: 100%;
-  font-size: 12px;
-  color: #1e1f29;
-  font-weight: 500;
-}
 
-.input_box input,
-.input_box select {
-  margin-top: 10px;
-  width: 100%;
-  border: 1px solid #acacac;
-  min-height: 40px;
-  padding: 4%;
-  box-sizing: border-box;
-  font-weight: 500;
-  color: #3c3c40;
-  font-size: 12px;
-  border-radius: 5px;
-  background-color: #fff !important;
-}
 @media only screen and (max-width:490px) {
   .myClassname {
     margin: 4vh 0;
@@ -177,4 +156,11 @@ main code start here
   font-weight: 900;
   font-size: 3vh;
   color: rgb(143, 143, 143);
+}
+.footer{
+   width: -moz-available !important;
+   /* WebKit-based browsers will ignore this. */
+   width: -webkit-fill-available !important;
+   /* Mozilla-based browsers will ignore this. */
+   width: fill-available !important;
 }

@@ -14,7 +14,7 @@ import "./styles/main.bundle.css";
 import "./App.css";
 
 function App() {
-    const [token, setToken] = React.useState(Cookies.get('spotifyAuthToken'));
+    const [token, setToken] = React.useState(localStorage.getItem('spotifyAuthToken'));
 
     const [data, setData] = useState({ featuredPlaylists: {}, newReleases: {}, categories: {} });
 
@@ -52,44 +52,48 @@ function App() {
             callApi();
         }
 
-    });
+    }, []);
     return (
         <div className="App">
             <DashboardLayout>
-                <div className={`flex items-center ${token ? 'self-center' : 'justify-start'}`}>
+                <div className={`flex items-center ${!token ? 'self-center' : 'justify-start'}`}>
                     <div className="row">
                         <div className="col-md-12">
-                            {!token ? (
+                            {token ? (
                                 <div className="flex flex-col justify-self-start" >
-                                    {/* <SpotifyApiContext.Provider value={token}> */}
-                                    {/* Your Spotify Code here */}
-                                    {/* <p>You are authorized with token: {token}</p> */}
-                                    {data.featuredPlaylists.playlists && data.newReleases && data.categories ? (
-                                        <div>
-                                            <ItemsList items={data.featuredPlaylists.playlists.items} type="Featured Playlists" />
-                                            <ItemsList items={data.newReleases.albums.items} type="New Releases" />
-                                            <ItemsList items={data.categories.categories.items} type="Categories" />
-                                        </div>
+                                    <SpotifyApiContext.Provider value={token}>
+                                        {/* Your Spotify Code here */}
+                                        {/* <p>You are authorized with token: {token}</p> */}
+                                        {data.featuredPlaylists.playlists && data.newReleases && data.categories ? (
+                                            <div>
+                                                <ItemsList items={data.featuredPlaylists.playlists.items} type="Featured Playlists" />
+                                                <ItemsList items={data.newReleases.albums.items} type="New Releases" />
+                                                <ItemsList items={data.categories.categories.items} type="Categories" />
+                                            </div>
 
-                                    ) : (
-                                        <div>
-                                            <p>Loading...</p>
-                                        </div>
-                                    )}
+                                        ) : (
+                                            <div>
+                                                <p>Loading...</p>
+                                            </div>
+                                        )}
 
-                                    {/* </SpotifyApiContext.Provider> */}
+                                    </SpotifyApiContext.Provider>
                                 </div>
                             ) : (
                                 // Display the login page
                                 <div className="flex flex-col w-full h-full justify-center  items-center bg-grey-300 " >
-                                    <h1 className="text-6xl font-bold text-purple text-center mt-5 mb-5 p-4" >Login to continue...</h1>
+                                    <h1 className="text-6xl font-bold text-purple-800 text-center mt-5 mb-5 p-4" >Login to continue...</h1>
                                     <SpotifyAuth
                                         redirectUri="http://localhost:3000"
                                         clientID="8727f35b55f04a62b8d39810d41192dd"
                                         localStorage={true}
-                                        // noCookie={true}
+                                        noCookie={false}
                                         scopes={[Scopes.userReadPrivate, "user-read-email"]} // either style will work
-                                        onAccessToken={(token) => setToken(token)}
+                                        onAccessToken={(token) => {
+                                            localStorage.setItem("spotifyAuthToken", token);
+                                            setToken(token)
+                                        }}
+                                        showDialog={true}
                                     />
                                 </div>
                             )}

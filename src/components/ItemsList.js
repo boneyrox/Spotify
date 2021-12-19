@@ -2,6 +2,7 @@
 import React from "react";
 import Card from "./Card";
 import TinySlider from "tiny-slider-react";
+import { useEffect } from 'react';
 
 export default function ItemsList({ items, type }) {
     const settings = {
@@ -28,16 +29,20 @@ export default function ItemsList({ items, type }) {
             }
         }
     };
+    useEffect(() => {
+
+    }, []
+    )
 
 
     return (
-        <div className="flex flex-col relative m-4 lg:w-4/6 md:w-3/6">
+        <div className="flex flex-col relative m-4 lg:w-3/6 md:w-2/6">
             <div className="flex items-center " >
                 <p className="text-lg font-semibold " >{type}</p>
-                <div className="w-3/6 h-1  mx-3 border-2 border-grey " ></div>
+                <div className="w-3/6 h-1  mx-3 border-2 border-grey-700 " ></div>
             </div>
             {/* <div className="flex flex-row flex-wrap"> */}
-            <TinySlider settings={settings} className="flex flex-row m-4 p-2   "
+            <TinySlider settings={settings} className="flex flex-row m-4 p-2  "
 
 
             >
