@@ -31,7 +31,7 @@ export const NavSidebar = () => {
                 type="button"
                 style={{ position: 'fixed', left: '1vh', top: '1vh' }}
             >
-                <FontAwesomeIcon icon={FaBars} />
+                <FaBars />
             </button>
 
 

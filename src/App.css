@@ -164,3 +164,24 @@ main code start here
    /* Mozilla-based browsers will ignore this. */
    width: fill-available !important;
 }
+
+.side-navigation-panel-select-option-text{
+  color:white !important;
+}
+.side-navigation-panel-select-option:hover .side-navigation-panel-select-option-text{
+  color:rgb(79, 0, 207) !important;
+}
+.side-navigation-panel-select-option:hover{
+  background-color: #f8f9d25b !important;
+  background-image: linear-gradient(315deg, #f8f9d2 0%, #e8dbfc 54%) !important;
+}
+/*  on select of side navigation panel text color */
+.side-navigation-panel-select-option-selected .side-navigation-panel-select-option-text{
+  color:rgb(20, 15, 15) !important;
+}
+.header_main{
+  background-color: #fad0c4;
+  background-image: linear-gradient(315deg, #fad0c4 0%, #f1a7f1 74%);
+
+}
+ 

@@ -15,15 +15,15 @@ export const DashboardLayout = ({ children }) => {
                 <NavSidebar />
                 <div className="flex flex-col flex-1 overflow-hidden">
 
-                    <div className='m-0 flex justify-center items-center shadow-sm h-64'>
+                    <div className='header_main m-0 flex justify-center items-center shadow-sm h-64' >
 
+                        <h1 className="text-6xl text-white indent-9 tracking-widest font-bold " >PLAY.   RESUME.</h1>
 
-                        <img className=' place-items-center h-24 ' src={logo} alt="" />
                     </div>
 
 
 
-                    <main className="flex flex-col justify-between items-baseline h-screen lg:w-5/6 overflow-auto " >
+                    <main className="flex flex-col justify-between items-baseline h-screen w-screen overflow-auto " >
 
 
                         {children}
